@@ -10,8 +10,19 @@ class NewsController < ApplicationController
     render layout: false
   end
 
+  def edit
+    @newska = current_user.news.find params[:id]
+    render layout: false
+  end
+
   def create
     current_user.news.create! params[:news]
+    render nothing: true
+  end
+
+  def update
+    @newska = current_user.news.find params[:id]
+    @newska.update_attributes params[:news]
     render nothing: true
   end
 

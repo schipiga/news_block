@@ -4,8 +4,8 @@
   <%= render 'login' %>
 <% end %>
 <% if current_user %>
-  <span id="add_news">Add News</span>
-  <div id="new_news_form" data-path="<%= new_news_path %>"></div>
+  <%= link_to "Add News", new_news_path, id: "add_news" %>
+  <div id="show_news_form"></div>
 <% end %>
 <%= link_to "By Date", news_index_path, class: :sort_news %>
 <%= link_to "By Votes", by_votes_news_index_path, class: :sort_news %>

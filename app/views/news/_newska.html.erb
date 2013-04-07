@@ -6,3 +6,6 @@
     <%= link_to type, vote_news_path(newska, type: type), class: :vote %>
   <% end %>
 <% end %>
+<% if current_user == newska.user %>
+  <%= link_to 'edit', edit_news_path(newska), class: 'edit_news' %>
+<% end %>
