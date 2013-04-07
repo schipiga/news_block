@@ -1,6 +1,7 @@
 class NewsController < ApplicationController
   before_filter :authenticate_user!, except: [:index,
-                                              :by_votes]
+                                              :by_votes,
+                                              :show]
 
   NEWS_PER_PAGE = 10
 
@@ -42,5 +43,10 @@ class NewsController < ApplicationController
     @news = current_user.news.paginate page: params[:page],
                                        per_page: NEWS_PER_PAGE
     render 'index', layout: false
+  end
+
+  def show
+    @newska = News.find params[:id]
+    render layout: false
   end
 end
