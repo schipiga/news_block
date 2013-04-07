@@ -1,2 +1,6 @@
 <%= newska.title %>
 <%= truncate newska.content %>
+<%= newska.reputation_for(:votes).to_i %>
+<% ['up', 'down'].each do |type| %>
+  <%= link_to type, vote_news_path(newska, type: type), class: :vote %>
+<% end %>

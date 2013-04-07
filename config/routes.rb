@@ -1,7 +1,11 @@
 NewsBlock::Application.routes.draw do
   devise_for :users, controllers: { sessions: 'sessions' }
 
-  resources :news
+  resources :news do
+    member do
+      post :vote
+    end
+  end
 
   root to: 'home#lets_go'
 
