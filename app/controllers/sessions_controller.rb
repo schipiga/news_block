@@ -1,4 +1,6 @@
 class SessionsController < Devise::SessionsController
+  before_filter :authenticate_user!, only: :destroy
+
   def new
     @user = User.new
     render layout: false

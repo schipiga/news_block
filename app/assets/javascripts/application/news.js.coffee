@@ -17,3 +17,9 @@ $ ->
     event.preventDefault()
     $.get $(@).attr('href'), (data) ->
       $('#news').html data
+
+  $(document).on 'click', '.vote', (event) ->
+    that = $(@)
+    event.preventDefault()
+    $.post that.attr('href'), (data) ->
+      that.parents('.newska').html data
