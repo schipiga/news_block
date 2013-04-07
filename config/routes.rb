@@ -1,13 +1,14 @@
 NewsBlock::Application.routes.draw do
   devise_for :users, controllers: { sessions: 'sessions' }
 
-  resources :news do
+  resources :news, except: :destroy do
     collection do
       get :by_votes
       get :my
     end
     member do
       post :vote
+      post :delete
     end
   end
 
