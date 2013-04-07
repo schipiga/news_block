@@ -60,4 +60,10 @@ class NewsController < ApplicationController
     @newska = News.find params[:id]
     render layout: false
   end
+
+  def delete
+    @newska = current_user.news.find params[:id]
+    @newska.destroy
+    render nothing: true
+  end
 end

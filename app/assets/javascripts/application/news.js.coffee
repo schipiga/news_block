@@ -36,3 +36,10 @@ $ ->
     event.preventDefault()
     $.get $(@).attr('href'), (data) ->
       $('#show_news_form').html data
+
+  $(document).on 'click', '.delete_news', (event) ->
+    event.preventDefault()
+    news = $('#news')
+    $.post $(@).attr('href'), ->
+      $.get news.data('url'), (data) ->
+        news.html data

@@ -1,4 +1,4 @@
-<span class="show_newska"><%= newska.title %><span>
+<span class="show_newska"><%= newska.title %></span>
 <%= truncate newska.content %>
 <%= newska.reputation_for(:votes).to_i %>
 <% if current_user %>
@@ -8,4 +8,5 @@
 <% end %>
 <% if current_user == newska.user %>
   <%= link_to 'edit', edit_news_path(newska), class: 'edit_news' %>
+  <%= link_to 'del', delete_news_path(newska), class: :delete_news %>
 <% end %>
