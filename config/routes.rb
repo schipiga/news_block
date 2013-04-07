@@ -1,6 +1,8 @@
 NewsBlock::Application.routes.draw do
   devise_for :users, controllers: { sessions: 'sessions' }
 
+  resources :news
+
   root to: 'home#lets_go'
 
   # The priority is based upon order of creation:

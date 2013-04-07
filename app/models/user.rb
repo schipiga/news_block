@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :validatable
 
+  has_many :news
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email,
                   :password
