@@ -1,0 +1,6 @@
+<% @news.each do |newska| %>
+  <div class="newska">
+    <%= render 'news/newska', newska: newska %>
+  </div>
+<% end %>
+<%= will_paginate @news %>
