@@ -2,6 +2,10 @@ NewsBlock::Application.routes.draw do
   devise_for :users, controllers: { sessions: 'sessions' }
 
   resources :news do
+    collection do
+      get :by_votes
+      get :my
+    end
     member do
       post :vote
     end

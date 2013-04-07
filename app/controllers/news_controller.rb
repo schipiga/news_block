@@ -1,5 +1,6 @@
 class NewsController < ApplicationController
-  before_filter :authenticate_user!, except: :index
+  before_filter :authenticate_user!, except: [:index,
+                                              :by_votes]
 
   NEWS_PER_PAGE = 10
 
@@ -23,8 +24,23 @@ class NewsController < ApplicationController
   end
 
   def index
-    @news = News.paginate page: params[:page],
+    @news = News.by_date.paginate page: params[:page],
                           per_page: NEWS_PER_PAGE
     render layout: false
+  end
+
+  def by_votes
+    @news = News.find_with_reputation(:votes,
+                                      :all,
+                                      order: 'votes DESC')
+                .paginate page: params[:page],
+                          per_page: NEWS_PER_PAGE
+    render 'index', layout: false
+  end
+
+  def my
+    @news = current_user.news.paginate page: params[:page],
+                                       per_page: NEWS_PER_PAGE
+    render 'index', layout: false
   end
 end

@@ -23,3 +23,8 @@ $ ->
     event.preventDefault()
     $.post that.attr('href'), (data) ->
       that.parents('.newska').html data
+
+  $(document).on 'click', '.sort_news', (event) ->
+    event.preventDefault()
+    $.get $(@).attr('href'), (data) ->
+      $('#news').html data

@@ -7,6 +7,11 @@
   <span id="add_news">Add News</span>
   <div id="new_news_form" data-path="<%= new_news_path %>"></div>
 <% end %>
+<%= link_to "By Date", news_index_path, class: :sort_news %>
+<%= link_to "By Votes", by_votes_news_index_path, class: :sort_news %>
+<% if current_user %>
+  <%= link_to "My News", my_news_index_path, class: :sort_news %>
+<% end %>
 <div id="news" data-path="<%= news_index_path %>"></div>
 
 <script type='text/javascript'>
