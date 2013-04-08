@@ -3,7 +3,7 @@
 
 body {
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
 }
 
 .back {
@@ -67,4 +67,13 @@ textarea {
 
 .show_newska {
   cursor: pointer;
+}
+
+#login, #logout, #add_news {
+  float: right;
+}
+
+#navigation, .pagination {
+  text-align: center;
+  clear: both;
 }
