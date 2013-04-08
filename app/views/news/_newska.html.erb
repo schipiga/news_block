@@ -3,10 +3,10 @@
 <%= newska.reputation_for(:votes).to_i %>
 <% if current_user %>
   <% ['up', 'down'].each do |type| %>
-    <%= link_to type, vote_news_path(newska, type: type), class: :vote %>
+    <%= link_to type, vote_news_path(newska, type: type), class: 'vote' %>
   <% end %>
 <% end %>
 <% if current_user == newska.user %>
-  <%= link_to 'edit', edit_news_path(newska), class: 'edit_news' %>
-  <%= link_to 'del', delete_news_path(newska), class: :delete_news %>
+  <%= link_to 'edit', edit_news_path(newska), class: 'edit_news btn' %>
+  <%= link_to 'del', delete_news_path(newska), class: 'delete_news btn' %>
 <% end %>

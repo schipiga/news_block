@@ -1,12 +1,12 @@
 <div class="back container">
-  <div class="manage_form">
+  <div class="manage_form well">
     <span class='close'>x</span>
     <%= form_for newska, html: { class: 'news_form' } do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title %>
       <%= f.label :content %>
-      <%= f.text_area :content %>
-      <%= f.submit 'Post' %>
+      <%= f.text_area :content %><br />
+      <%= f.submit 'Post', class: 'btn btn-submit' %>
     <% end %>
   </div>
 </div>

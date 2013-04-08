@@ -1,20 +1,45 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
 .back {
   position: fixed;
   top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .new_session, .show_form, .manage_form {
   margin: 100px auto;
   padding: auto;
-  width: 300px;
+  width: 220px;
   height: auto;
   background: white;
 }
 
-.manage_form {
+#news_title {
   width: 400px;
+}
+
+#news_content {
+  width: 400px;
+  height: 300px;
+}
+
+.manage_form {
+  width: 415px;
+}
+
+.btn-submit {
+  float: right;
+}
+
+textarea {
+  resize: none;
 }

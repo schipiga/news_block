@@ -1,12 +1,12 @@
 <div class="back container">
-  <div class='new_session'>
+  <div class='new_session well'>
     <span class='close'>x</span>
     <%= form_for @user, url: user_session_path do |f| %>
       <%= f.label :email %>
       <%= f.text_field :email %>
       <%= f.label :password %>
-      <%= f.password_field :password %>
-      <%= f.submit 'Log in' %>
+      <%= f.password_field :password %><br />
+      <%= f.submit 'Log in', class: 'btn btn-submit' %>
     <% end %>
   </div>
 </div>

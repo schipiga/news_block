@@ -4,7 +4,7 @@
   <%= render 'login' %>
 <% end %>
 <% if current_user %>
-  <%= link_to "Add News", new_news_path, id: "add_news" %>
+  <%= link_to "Add News", new_news_path, id: "add_news", class: 'btn' %>
   <div id="show_news_form"></div>
 <% end %>
 <%= link_to "By Date", news_index_path, class: :sort_news %>
