@@ -3,16 +3,16 @@ class NewsController < ApplicationController
                                               :by_votes,
                                               :show]
 
+  layout false
+
   NEWS_PER_PAGE = 10
 
   def new
     @newska = News.new
-    render layout: false
   end
 
   def edit
     newska
-    render layout: false
   end
 
   def create
@@ -37,7 +37,6 @@ class NewsController < ApplicationController
   def index
     @news = News.by_date.paginate page: params[:page],
                           per_page: NEWS_PER_PAGE
-    render layout: false
   end
 
   def by_votes
@@ -46,18 +45,17 @@ class NewsController < ApplicationController
                                       order: 'votes DESC')
                 .paginate page: params[:page],
                           per_page: NEWS_PER_PAGE
-    render 'index', layout: false
+    render 'index'
   end
 
   def my
     @news = current_user.news.paginate page: params[:page],
                                        per_page: NEWS_PER_PAGE
-    render 'index', layout: false
+    render 'index'
   end
 
   def show
     @newska = News.find params[:id]
-    render layout: false
   end
 
   def delete
