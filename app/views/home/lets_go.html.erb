@@ -7,11 +7,13 @@
   <%= link_to "Add News", new_news_path, id: "add_news", class: 'btn' %>
   <div id="show_news_form"></div>
 <% end %>
-<%= link_to "By Date", news_index_path, class: :sort_news %>
-<%= link_to "By Votes", by_votes_news_index_path, class: :sort_news %>
-<% if current_user %>
-  <%= link_to "My News", my_news_index_path, class: :sort_news %>
-<% end %>
+<div id='navigation'>
+  <%= link_to "By Date", news_index_path, class: :sort_news %>
+  | <%= link_to "By Votes", by_votes_news_index_path, class: :sort_news %>
+  <% if current_user %>
+    | <%= link_to "My News", my_news_index_path, class: :sort_news %>
+  <% end %>
+</div>
 <div id="news" data-path="<%= news_index_path %>"></div>
 <div id="detailed_newska"></div>
 

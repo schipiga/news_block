@@ -11,7 +11,7 @@ class NewsController < ApplicationController
   end
 
   def edit
-    @newska = current_user.news.find params[:id]
+    newska
     render layout: false
   end
 
@@ -21,8 +21,7 @@ class NewsController < ApplicationController
   end
 
   def update
-    @newska = current_user.news.find params[:id]
-    @newska.update_attributes params[:news]
+    newska.update_attributes params[:news]
     render nothing: true
   end
 
@@ -62,8 +61,11 @@ class NewsController < ApplicationController
   end
 
   def delete
-    @newska = current_user.news.find params[:id]
-    @newska.destroy
+    newska.destroy
     render nothing: true
+  end
+
+  def newska
+    @newska ||= current_user.news.find params[:id]
   end
 end
