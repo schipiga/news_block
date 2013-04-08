@@ -11,11 +11,10 @@ group :production do
   gem 'pg'
 end
 
-group :develop, :test do
+group :development, :test do
   gem 'sqlite3'
   gem 'debugger'
 end
-
 
 # Gems used only for assets and not required
 # in production environments by default.
