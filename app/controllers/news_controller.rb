@@ -65,6 +65,8 @@ class NewsController < ApplicationController
     render nothing: true
   end
 
+  protected
+
   def newska
     @newska ||= current_user.news.find params[:id]
   end

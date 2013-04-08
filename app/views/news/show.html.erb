@@ -1,9 +1,10 @@
 <div class="back container">
-  <div class='show_form'>
+  <div class='show_form well'>
     <span class='close'>x</span>
-    <%= @newska.user.email %>
-    <%= @newska.created_at %>
-    <%= @newska.title %>
+    <h4><%= @newska.title %></h4>
     <%= @newska.content %>
+    <p><br />
+    posted by <%= @newska.user.email %>
+    at <%= @newska.created_at.to_s :db %>
   </div>
 </div>

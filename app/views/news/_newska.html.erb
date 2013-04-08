@@ -1,6 +1,6 @@
-<span class="newska_title">
+<div class="newska_title">
   <%= newska.title %>
-</span>
+</div>
 <% if current_user == newska.user %>
   <%= link_to 'del', delete_news_path(newska), class: 'delete_news btn', confirm: 'Are you sure?' %>
   <%= link_to 'edit', edit_news_path(newska), class: 'edit_news btn' %>

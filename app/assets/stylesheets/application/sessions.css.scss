@@ -12,7 +12,11 @@ body {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  width: 100%;
 }
 
 #news {
@@ -21,15 +25,19 @@ body {
 }
 
 .newska_title {
-  width: 400px;
+  width: 380px;
+  height: 21px;
   font-size: 20px;
   color: gray;
-  cursor: pointer;
+  overflow: hidden;
+  float: left;
 }
 
 .newska_content {
-  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 5px;
   font-size: 15px;
+  clear: both;
 }
 
 .new_session, .show_form, .manage_form {
@@ -76,4 +84,8 @@ textarea {
 #navigation, .pagination {
   text-align: center;
   clear: both;
+}
+
+.show_form {
+  width: 600px;
 }
