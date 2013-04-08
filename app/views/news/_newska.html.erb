@@ -2,7 +2,7 @@
   <%= newska.title %>
 </span>
 <% if current_user == newska.user %>
-  <%= link_to 'del', delete_news_path(newska), class: 'delete_news btn' %>
+  <%= link_to 'del', delete_news_path(newska), class: 'delete_news btn', confirm: 'Are you sure?' %>
   <%= link_to 'edit', edit_news_path(newska), class: 'edit_news btn' %>
 <% end %>
 <div class="newska_content">
