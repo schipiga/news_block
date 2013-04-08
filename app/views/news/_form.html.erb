@@ -1,8 +1,12 @@
-<span class='close'>x</span>
-<%= form_for newska, html: { class: 'news_form' } do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <%= f.submit 'Post' %>
-<% end %>
+<div class="back container">
+  <div class="manage_form">
+    <span class='close'>x</span>
+    <%= form_for newska, html: { class: 'news_form' } do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+      <%= f.submit 'Post' %>
+    <% end %>
+  </div>
+</div>

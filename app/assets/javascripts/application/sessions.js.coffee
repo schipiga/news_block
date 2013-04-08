@@ -5,4 +5,4 @@ $ ->
       login_form.html data
 
   $(document).on 'click', '.close', ->
-    $(@).parent().html ''
+    $(@).parents('.container').remove()
