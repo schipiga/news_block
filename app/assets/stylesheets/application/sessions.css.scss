@@ -15,6 +15,23 @@ body {
   background: rgba(0, 0, 0, 0.3);
 }
 
+#news {
+  margin: 20px auto;
+  width: 500px;
+}
+
+.newska_title {
+  width: 400px;
+  font-size: 20px;
+  color: gray;
+  cursor: pointer;
+}
+
+.newska_content {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
 .new_session, .show_form, .manage_form {
   margin: 100px auto;
   padding: auto;
@@ -42,4 +59,12 @@ body {
 
 textarea {
   resize: none;
+}
+
+.edit_news, .delete_news, .votes {
+  float: right;
+}
+
+.show_newska {
+  cursor: pointer;
 }

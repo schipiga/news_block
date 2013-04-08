@@ -1,5 +1,5 @@
 <% @news.each do |newska| %>
-  <div class="newska" data-path="<%= news_path newska %>">
+  <div class="newska well well-small" data-path="<%= news_path newska %>">
     <%= render 'news/newska', newska: newska %>
   </div>
 <% end %>
